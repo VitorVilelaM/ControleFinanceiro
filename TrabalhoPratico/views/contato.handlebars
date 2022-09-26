@@ -1,0 +1,68 @@
+<div class="contato">
+    <div class="container">
+        <div class="information display">
+            <div class="top-info">
+                <div class="title display">Controle <span class="highlight">Financeiro</span></div>
+                <div class="options display">
+                    <input type="search" name="search" id="search-input" placeholder="Pesquise aqui">
+                    <button id="search"><i class="fa-solid fa-search"></i></button>
+                    <button id="search-close"><i class="fa-solid fa-times"></i></button>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5509/5509366.png" draggable="false">
+                    <a href="/editar-usuario"><i class="fa-solid fa-angle-down"></i></a>
+                </div>
+            </div>
+            <div class="form display">
+                <form>
+                    <input type="text" name="nome" placeholder="Nome" required>
+                    <input type="text" name="nome" placeholder="Telefone" required>
+                    <input type="text" name="nome" placeholder="Email" required>
+                    <input type="text" name="nome" placeholder="Assunto" required>
+                    <textarea rows="10" name="msg" placeholder="Mensagem" required></textarea>
+                    <button class="button" type="submit">Enviar</button>
+                </form>
+            </div>
+
+            <div class="info display">
+                <div class="title">ENTRE EM CONTATO <span class="cursive">Conosco</span></div>
+                <div class="more-infos">
+                    <div class="text">Telefone:<span class="highlight"> (38) 94002-8922(Whatsapp)</span></div>
+                    <div class="text">Email:<span class="highlight"> finance_me@gmail.com</span></div>
+                    <div class="text">Endereço:<span class="highlight"> Av. Dirce Pereira Rosa, 300 - Jardim Esperanca,
+                            Poços de
+                            Caldas - MG, 37713-100</span></div>
+                </div>
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3703.5320161030636!2d-46.56138888552516!3d-21.837005406061028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c9c31ca5676ead%3A0xf28692a7a0a7e129!2sIFSULDEMINAS%20-%20CAMPUS%20PO%C3%87OS%20DE%20CALDAS!5e0!3m2!1spt-BR!2sbr!4v1644780936455!5m2!1spt-BR!2sbr"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var search = document.getElementById("search");
+    var search_close = document.getElementById("search-close");
+    var search_input = document.getElementById("search-input");
+
+    search.addEventListener("click", searchToggle);
+    search_close.addEventListener("click", searchToggleClose);
+
+    function searchToggle() {
+        search_input.style.width = "45%";
+        search_close.style.display = "inline-block";
+        search_close.style.transform = "translateX(-25px)";
+        setTimeout(function display() {
+            search_close.style.transform = "translateX(0px) rotate(90deg)";
+        }, 100);
+    }
+    function searchToggleClose() {
+        search_input.style.width = "7%";
+        search_close.style.transform = "rotate(-90deg) translateY(-25px)";
+        setTimeout(function display() {
+            search_input.style.transform = "translateX(25deg)";
+        }, 1000);
+    }
+
+</script>

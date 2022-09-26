@@ -1,0 +1,23 @@
+<div class="cadastro">
+    <div class="container">
+        <img src="assets/img/logo.jpg">
+        <form action="/cadastro" method="POST">
+            <h3>Cadastrar no Finance.me</h3>
+            <input type="text" name="nome" placeholder="Nome Completo" />
+            <input type="text" name="email" placeholder="Email" />
+            <input type="password" name="senha" placeholder="Sua Senha" />
+            <input type="password" name="senhac" placeholder="Confirme a sua senha" />
+            <button class="button" type="submit">Entrar</button>
+            {{#if dadosValidos}}
+                <div style="color: green">
+                    <spam>{{mensagem}}</spam>
+                </div>
+            {{else}}
+                <div style="color: red">
+                    <spam>{{mensagem}}</spam>
+                </div>
+            {{/if}}
+            <p>Já possui Cadastro? <a href="/login">Faça Login</a></p>
+        </form>
+    </div>
+</div>

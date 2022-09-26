@@ -1,0 +1,842 @@
+/*--------------------------------------------------------------------------------------------------
+                                            GERAL                                             
+----------------------------------------------------------------------------------------------------*/
+
+
+:root{
+	--principal: #FFDC2C;
+	--gray: #333;
+	--verde: #8fd053;
+	--amarelo: #F7F014;
+	--vermelho: #b50000;
+	--branco: white;
+	--preto: black;
+	--cinza: #ededed;
+	--cinzae: #333;
+	--cinzam: #d1d1d1;
+}
+*{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	font-size: 0;
+}
+.display{
+	display: inline-block;
+	vertical-align: bottom;
+}
+.background{
+	background: rgba(0, 0, 0, 0.5);
+}
+.destaque{
+	color: var(--principal);
+}
+
+header{
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	background-image: url("../assets/img/banner/1.jpg");
+	transition: all 0.5s ease;
+	position: relative;
+	z-index: 3;
+}
+header .menu{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+header .menu .logo{
+	width: 15%;
+	margin: 0;
+	padding: 0.8% 2.5%;
+	text-align: center;
+}
+header .linha{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	top: -2px;
+	z-index: 0;
+	position: relative;
+	border: none;
+    height: 0.1px; /* height of container */
+    object-fit: cover;
+}
+header .logo img{
+	width: 70%;
+}
+header .menu .options{
+	width: 80%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Gulzar', serif;
+}
+header .menu .options ul{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+header .menu .options ul:nth-child(1){
+	width: 70%;
+}
+header .menu .options ul:nth-child(2){
+	width: 30%;
+}
+header .menu .options ul a{
+	transition: all 0.5s;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+}
+header .menu .options ul a li{
+	font-size: 19px;
+	list-style: none;
+	display: inline-block;
+	color: white;
+	padding: 0% 2%;
+	transition: font-size 0.5s;
+	z-index: 1;
+	position: relative;
+	line-height: 250%;
+	overflow: hidden;
+}
+header .menu .options ul a:hover li{
+	font-size: 21px;
+	border-bottom: 2px solid var(--principal);
+	color: var(--principal);
+	font-weight: bold;
+}
+header .menu .options ul a li i{
+	font-size: 25px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+header .info .offer{
+	width: 45%;
+	margin: 7% 5%;
+}
+header .info .offer p{
+	font-size: 40px;
+	color: white;
+	line-height: 120%;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-bottom: 10%;
+}
+header .info .offer p .destaque{
+	font-size: 40px;
+}
+
+footer{
+	margin-top: 5%;
+	padding: 2%;
+	line-height: 1.7;
+	background-color: var(--principal);
+	font-family: 'Josefin Sans', sans-serif;
+}
+footer .display{
+	width: 50%;
+	vertical-align: middle;
+}
+footer .info p{
+	font-size: 13px;
+}
+footer .social-media{
+	text-align: right;
+}
+footer .social-media a{
+	text-decoration: none;
+	margin: 0% 2%;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+}
+footer .social-media a li{
+	display: inline-block;
+	vertical-align: middle;
+}
+footer .social-media a li i{
+	font-size: 20px;
+	color: black;
+	background: white;
+	width: 40px;
+	padding: 10px 0px;
+	border-radius: 100%;
+	transition: all 0.3s;
+}
+footer .social-media a:hover li i{
+	font-size: 25px;
+	color: black;
+	background: white;
+	width: 45px;
+	padding: 10px 0px;
+	border-radius: 100%;
+}
+
+.login{
+	position: absolute;
+	font-size: 20px;
+	width: 500px;
+	height: 300px;
+	background: white;
+	border: 3px solid var(--principal);
+	z-index: 10;
+	top: 85px;
+	right: 47px;
+	border-radius: 0px 0px 10px 10px;
+	font-family: 'Josefin Sans', sans-serif;
+	padding: 0%;
+	display: none;
+}
+.login .title{
+	padding: 3% 0%;
+	text-align: center;
+}
+.login .title .main{
+	font-size: 25px;
+	font-weight: bold;
+	color: var(--principal);
+}
+.login .title .sub{
+	padding: 1% 0%;
+	font-size: 17px;
+}
+.login .form form {
+	text-align: center;
+}
+.login .form form input{
+	font-size: 15px;
+	width: 50%;
+	padding: 3% 2%;
+	margin: 1% 2%;
+	margin-bottom: 2%;
+	border: 1px solid lightgray;
+	border-radius: 10px;
+	transition: all 0.5s;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.login .form form input:hover{
+	border: 1px solid var(--principal);
+}
+.login .form form button{
+	font-size: 18px;
+	width: 40%;
+	padding: 3% 2%;
+	margin: 1% 2%;
+	margin-bottom: 2%;
+	border: 1px solid white;
+	border-radius: 10px;
+	background-color: var(--principal);
+	color: white;
+	cursor: pointer;
+	transition: all 0.5s;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.login .form form button:hover{
+	width: 45%;
+	font-size: 20px;
+}
+.login .signup{
+	text-align: center;
+}
+.login .signup a{
+	font-size: 15px;
+	color: black;
+	text-decoration: none;
+	transition: all 0.5s;
+}
+.login .signup a:hover{
+	text-decoration: underline;
+}
+
+
+/*--------------------------------------------------------------------------------------------------
+                                            INDEX                                             
+----------------------------------------------------------------------------------------------------*/
+
+
+.index{
+	border-radius: 15px;
+	position: relative;
+	top: -10px;
+	background: white;
+	width: 100%;
+	z-index: 4;
+	overflow: visible;
+}
+.index .cards{
+	top: -60px;
+	z-index: 7;
+	position: relative;
+}
+.index .cards .display{
+	vertical-align: middle;
+}
+.index .cards .item{
+	width: 20%;
+	margin: 1% 2.5%;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 10px;
+	background: white;
+	text-decoration: none;
+	color: black;
+	transition: transform 0.5s;
+}
+.index .cards .item:hover{
+	text-decoration: none;
+	transform: scale(1.05);
+}
+.index .cards .item .img{
+	width: 50%;
+}
+.index .cards .item .img img{
+	width: 100%;
+	border-radius: 10px 0px 0px 10px;
+}
+.index .cards .item .text{
+	width: 50%;
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.index .cards .item .text span{
+	font-size: 20px;
+	line-height: 1.5;
+}
+.index .hotels{
+	width: 95%;
+	margin: 0% 2.5%;
+}
+.index .hotels .title p{
+	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.index .hotels .title .main{
+	font-size: 35px;
+	font-weight: bold;
+	padding-bottom: 0.5%;
+	color: var(--principal);
+}
+.index .hotels .items .item{
+	width: 22.5%;
+	margin: 2% 1.09%;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 10px;
+	background: white;
+	text-decoration: none;
+	color: black;
+	overflow: hidden;
+	border: 2px solid white;
+	transition: border 0.3s;
+}
+.index .hotels .items .item:hover{
+	text-decoration: none;
+	border: 2px solid var(--principal);
+}
+.index .hotels .items .item button{
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	text-align: left;
+}
+.index .hotels .items .item .img{
+	width: 100%;
+	overflow: hidden;
+}
+.index .hotels .items .item .img img{
+	width: 100%;
+	border-radius: 8px 8px 0px 0px;
+	transition: transform 0.5s;
+}
+.index .hotels .items .item:hover .img img{
+	transform: scale(1.1);
+}
+.index .hotels .items .item .text{
+	font-size: 18px;
+	padding: 5%;
+	font-weight: bold;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/*--------------------------------------------------------------------------------------------------
+                                            HOTEIS                                             
+----------------------------------------------------------------------------------------------------*/
+
+
+.hoteis .hotels{
+	width: 95%;
+	margin: 2.5%;
+}
+.hoteis .hotels .title p{
+	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.hoteis .hotels .title .main{
+	font-size: 35px;
+	font-weight: bold;
+	padding-bottom: 0.5%;
+	color: var(--principal);
+}
+.hoteis .hotels .items .item{
+	width: 22.5%;
+	margin: 2% 1.09%;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 10px;
+	background: white;
+	text-decoration: none;
+	color: black;
+	overflow: hidden;
+	border: 2px solid white;
+	transition: border 0.3s;
+}
+.hoteis .hotels .items .item:hover{
+	text-decoration: none;
+	border: 2px solid var(--principal);
+}
+.hoteis .hotels .items .item button{
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	text-align: left;
+}
+.hoteis .hotels .items .item .img{
+	width: 100%;
+	overflow: hidden;
+}
+.hoteis .hotels .items .item .img img{
+	width: 100%;
+	border-radius: 8px 8px 0px 0px;
+	transition: transform 0.5s;
+}
+.hoteis .hotels .items .item:hover .img img{
+	transform: scale(1.1);
+}
+.hoteis .hotels .items .item .text{
+	font-size: 18px;
+	padding: 5%;
+	font-weight: bold;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.hoteis .admin{
+	width: 100%;
+	text-align: center;
+}
+.hoteis .admin button{
+	font-size: 18px;
+	width: 20%;
+	padding: 1% 2%;
+	margin: 1% 2%;
+	margin-bottom: 2%;
+	border: 1px solid white;
+	border-radius: 10px;
+	background-color: var(--principal);
+	color: white;
+	cursor: pointer;
+	transition: all 0.5s;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.hoteis .admin button:hover{
+	width: 25%;
+	font-size: 20px;
+}
+
+
+/*--------------------------------------------------------------------------------------------------
+                                            HOTEL                                             
+----------------------------------------------------------------------------------------------------*/
+
+
+.hotel .info{
+	width: 95%;
+	margin: 2.5%;
+}
+.hotel .info .title p{
+	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.hotel .info .title .main{
+	font-size: 35px;
+	font-weight: bold;
+	padding-bottom: 0.5%;
+	color: var(--principal);
+}
+.hotel .info .about .img{
+	width: 40%;
+	padding: 2% 0%;
+}
+.hotel .info .about .img img{
+	width: 100%;
+}
+.hotel .info .about .display{
+	vertical-align: top;
+}
+.hotel .info .about .text{
+	padding: 1.5% 2.5%;
+	width: 55%;
+}
+.hotel .info .about .text p{
+	font-size: 20px;
+	padding: 1% 0%;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 115%;
+}
+.hotel .info .about .text span{
+	font-size: 20px;
+	color: var(--principal);
+	font-weight: bold;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 115%;
+}
+.hotel .info .hospedagem{
+	border-top: 1px dashed var(--principal);
+	padding: 2% 0%;
+	margin: 0.5% 0%;
+}
+.hotel .info .hospedagem .quartos-title .main{
+	font-size: 30px;
+	font-weight: bold;
+	padding-bottom: 0.5%;
+	color: var(--principal);
+}
+.hotel .info .hospedagem .items .item{
+	width: 22.5%;
+	margin: 2% 1.09%;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 10px;
+	background: white;
+	text-decoration: none;
+	color: black;
+	overflow: hidden;
+	border: 2px solid white;
+	transition: border 0.3s;
+}
+.hotel .info .hospedagem .items .item:hover{
+	text-decoration: none;
+	border: 2px solid var(--principal);
+}
+.hotel .info .hospedagem .items .item .img{
+	width: 100%;
+	overflow: hidden;
+}
+.hotel .info .hospedagem .items .item .img img{
+	width: 100%;
+	border-radius: 8px 8px 0px 0px;
+	transition: transform 0.5s;
+}
+.hotel .info .hospedagem .items .item:hover .img img{
+	transform: scale(1.1);
+}
+.hotel .info .hospedagem .items .item .item-title{
+	font-size: 18px;
+	padding: 5%;
+	font-weight: bold;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.hotel .info .hospedagem .items .item .text p{
+	font-size: 20px;
+	padding: 2% 5%;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 115%;
+}
+.hotel .info .hospedagem .items .item .text span{
+	font-size: 17px;
+	color: var(--principal);
+	font-weight: bold;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 115%;
+}
+.hotel .info .hospedagem .items .item .text .valor,
+.hotel .info .hospedagem .items .item .text .valor span{
+	font-size: 17px;
+	font-weight: bold;
+	color: red;
+}
+.hotel .info .hospedagem .items .item .text .button{
+	text-align: center;
+}
+.hotel .info .hospedagem .items .item .text button{
+	font-size: 18px;
+	width: 40%;
+	padding: 3% 2%;
+	margin: 2% 0%;
+	margin-bottom: 2%;
+	border: 1px solid white;
+	border-radius: 10px;
+	background-color: var(--principal);
+	color: white;
+	cursor: pointer;
+	transition: all 0.5s;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.hotel .info .hospedagem .items .item .text button:hover{
+	width: 45%;
+	font-size: 20px;
+}
+
+
+/*--------------------------------------------------------------------------------------------------
+                                            CADASTRO                                             
+----------------------------------------------------------------------------------------------------*/
+
+
+.cadastro{
+	border-radius: 15px;
+	position: relative;
+	top: -10px;
+	background: white;
+	width: 100%;
+	z-index: 4;
+}
+.cadastro .form{
+	width: 95%;
+	margin: 2.5%;
+}
+.cadastro .title p{
+	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.cadastro .title .main{
+	font-size: 35px;
+	font-weight: bold;
+	padding-bottom: 0.5%;
+	color: var(--principal);
+}
+.cadastro form{
+	padding: 1.5% 0%;
+	text-align: center;
+}
+.cadastro form input{
+	font-size: 17px;
+	display: block;
+	width: 48%;
+	margin: 2% 25%;
+	padding: 1%;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.cadastro .form form button{
+	font-size: 18px;
+	width: 40%;
+	padding: 1% 0%;
+	margin: 1% 0%;
+	margin-bottom: 2%;
+	border: 1px solid white;
+	border-radius: 10px;
+	background-color: var(--principal);
+	color: white;
+	cursor: pointer;
+	transition: all 0.5s;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.cadastro .form form button:hover{
+	width: 45%;
+	font-size: 20px;
+}
+
+
+/*--------------------------------------------------------------------------------------------------
+                                            CONTATO                                             
+----------------------------------------------------------------------------------------------------*/
+
+
+.contact{
+	border-radius: 15px;
+	position: relative;
+	top: -10px;
+	background: white;
+	width: 100%;
+	z-index: 4;
+}
+.contact .form{
+	width: 95%;
+	margin: 2.5%;
+}
+.contact .title p{
+	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.contact .title .main{
+	font-size: 35px;
+	font-weight: bold;
+	padding-bottom: 0.5%;
+	color: var(--principal);
+}
+.contact form{
+	padding: 1.5% 0%;
+	text-align: center;
+}
+.contact form input,
+.contact form textarea{
+	font-size: 17px;
+	display: block;
+	width: 48%;
+	margin: 2% 25%;
+	padding: 1%;
+	resize: none;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.contact .form form button{
+	font-size: 18px;
+	width: 40%;
+	padding: 1% 0%;
+	margin: 1% 0%;
+	margin-bottom: 2%;
+	border: 1px solid white;
+	border-radius: 10px;
+	background-color: var(--principal);
+	color: white;
+	cursor: pointer;
+	transition: all 0.5s;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.contact .form form button:hover{
+	width: 45%;
+	font-size: 20px;
+}
+
+
+/*--------------------------------------------------------------------------------------------------
+                                            SOBRE                                             
+----------------------------------------------------------------------------------------------------*/
+
+
+.sobre .info{
+	width: 95%;
+	margin: 2.5%;
+}
+.sobre .info .title p{
+	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif;
+	margin-top: 1%;
+}
+.sobre .info .title .main{
+	font-size: 35px;
+	font-weight: bold;
+	padding-bottom: 0.5%;
+	color: var(--principal);
+}
+.sobre .info .about{
+	margin: 1% 0%;
+	border-bottom: 1px dashed var(--principal);
+}
+.sobre .info .about:last-child{
+	border-bottom: none;
+}
+.sobre .info .about .img{
+	width: 20%;
+	padding: 2% 0%;
+}
+.sobre .info .about .img img{
+	width: 100%;
+}
+.sobre .info .about .display{
+	vertical-align: middle;
+}
+.sobre .info .about .text{
+	padding: 1.5% 2.5%;
+	width: 75%;
+}
+.sobre .info .about .text p{
+	font-size: 20px;
+	padding: 1% 0%;
+}
+.sobre .info .about .text span{
+	font-size: 20px;
+	color: var(--principal);
+	font-weight: bold;
+}
+
+
+/*--------------------------------------------------------------------------------------------------
+                                            ADMINISTRADOR                                             
+----------------------------------------------------------------------------------------------------*/
+
+
+.administrador .information{
+	width: 95%;
+	margin: 2.5%;
+}
+.administrador .information .transaction{
+	width: 100%;
+	margin: 1% 0%;
+	text-align: right;
+}
+.administrador .information .transaction button{
+	background-color: var(--principal);
+	margin: 0% 1%;
+	margin-bottom: 2%;
+	font-size: 20px;
+	border-radius: 30px;
+	border: none;
+	width: 26%;
+	padding: 1%;
+	color: var(--branco);
+	font-family: 'Reem Kufi', sans-serif;
+	cursor: pointer;
+	transition: all 1s;
+}
+.administrador .information .transaction button:hover{
+	background-color: var(--cinzae);
+}
+.administrador .information table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--principal);
+  padding: 1%;
+  border-radius: 10px;
+  font-family: 'Abel', sans-serif;
+  font-size: 17px;
+  margin-bottom: 3%;
+}
+.administrador .information th{
+  padding: 1%;
+  text-align: center;
+  color: var(--branco);
+  font-size: 20px;
+}
+.administrador .information td{
+  padding: 1%;
+  text-align: center;
+  background-color: transparent;
+  font-size: 20px;
+}
+.administrador .information table button{
+	padding: 7% 8% 4% 8%;
+	margin-right: 4%;
+	border: none;
+	border-radius: 5px;
+	color: var(--branco);
+	font-size: 17px;
+	cursor: pointer;
+}
+.administrador .information table button i{
+	font-size: 17px;
+}
+.administrador .information table button:first-child{
+	background-color: var(--verde);
+}
+.administrador .information table button:last-child{
+	background-color: var(--vermelho);
+}
+.administrador .information table tbody tr{
+	border-bottom: 1px solid var(--cinzam);
+	transition: all 0.5s;
+	background-color: var(--branco);
+	cursor: default;
+	font-size: 20px;
+}
+.administrador .information table tbody tr:hover{
+	background-color: var(--cinza);
+}
+.administrador .information td .negative{
+	color: var(--vermelho);
+}
+
+.administrador .information td .positive{
+	color: var(--verde);
+}

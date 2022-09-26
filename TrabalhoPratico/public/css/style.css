@@ -1,0 +1,1113 @@
+/*------------------------------------------------------------------------------------------------------
+                                                GERAL
+------------------------------------------------------------------------------------------------------*/
+
+
+:root{
+	--verde: #8fd053;
+	--amarelo: #F7F014;
+	--vermelho: #b50000;
+	--branco: white;
+	--preto: black;
+	--cinza: #ededed;
+	--principal: #02907d;
+	--cinzae: #333;
+	--cinzam: #d1d1d1;
+}
+
+body{
+	background-color: var(--branco);
+	top: 0;
+	margin: 0;
+	padding: 0;
+	bottom: 0;
+}
+
+.display{
+	display: inline-block;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+.container header{
+	background-color: var(--principal);
+	top: 0;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	height: 100%;
+	width: 7%;
+	text-align: center;
+}
+.container header img{
+	width: 55%;
+	margin-top: 17%;
+	margin-bottom: 22.5%;
+}
+.container header ul{
+	list-style: none;
+	top: 0;
+	margin: 0;
+	padding: 0;
+}
+.container header ul li{
+	list-style: none;
+	border:  0px solid var(--cinza);
+	display: block;
+	text-align: center;
+	padding: 15% 0%;
+	transition: border 0.5s;
+}
+.container header ul li:hover{
+	border-right: 5px solid var(--cinza);
+}
+.container header ul li a{
+	color: white;
+	text-decoration: none;
+	font-size: 25px;
+}
+.container header ul li a .title{
+	display: none;
+}
+.container .finance{
+	width: 15%;
+	height: 100%;
+	position: fixed;
+	padding: 0;
+	margin: 0;
+	margin-left: 7%;
+	background-color: var(--cinza);
+}
+.container .finance .items{
+	border-bottom: 0.001px solid var(--branco);
+	padding-bottom: 5%;
+	margin-bottom: 5%;
+}
+.container .finance .item{
+	padding: 0% 5%;
+	margin-bottom: 10%;
+}
+.container .finance .total{
+	padding-top: 7%;
+	padding-bottom: 10%;
+	margin-bottom: 13%;
+	border-bottom: 0.001px solid var(--branco);
+}
+.container .finance .item .value{
+	font-size: 26px;
+	font-family: 'Abel', sans-serif;
+	font-weight: normal;
+}
+.container .finance .item .title{
+	font-size: 15px;
+	font-family: 'Reem Kufi', sans-serif;
+	color: var(--cinzae);
+}
+.container .finance .total .value{
+	font-size: 30px;
+	font-family: 'Abel', sans-serif;
+	font-weight: normal;
+}
+.container .finance .total .title{
+	font-size: 17px;
+	font-family: 'Reem Kufi', sans-serif;
+	color: var(--cinzae);
+}
+.container .finance .total,
+.container .finance .total .value,
+.container .finance .total .title{
+	transition: transform 0.5s;
+}
+.container .finance .ganho .title i,
+.container .finance .gasto .title i{
+	font-size: 20px;
+	float: right;
+}
+.container .finance .ganho .title i{
+	transform: rotate(45deg);
+	color: var(--verde);
+}
+.container .finance .gasto .title i{
+	transform: rotate(-315deg);
+	color: var(--vermelho);
+}
+.container .finance .total:hover .title{
+	transform: translateX(5px);
+	font-size: 19px;
+}
+.container .finance .total:hover .value{
+	transform: translateX(5px);
+	font-size: 32px;
+}
+.container .finance .ganho:hover .title,
+.container .finance .ganho:hover .value{
+	color: var(--verde);
+}
+.container .finance .gasto:hover .title,
+.container .finance .gasto:hover .value{
+	color: var(--vermelho);
+}
+.container .finance .ganho .title,
+.container .finance .ganho .value,
+.container .finance .gasto .title,
+.container .finance .gasto .value{
+	transition: color 0.5s;
+}
+.container .finance .months{
+	margin-top: 10%;
+}
+.container .finance .months .titulo{
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Abel', sans-serif;
+	width: 100%;
+	margin-bottom: 6%;
+}
+.container .finance .months .month{
+	font-size: 30px;
+	border: 3px solid var(--principal);
+	border-radius: 100px;
+	padding: 5%;
+	color: var(--principal);
+}
+.container .finance .months .item{
+	padding: 7%;
+	margin: 0;
+}
+.container .finance .months .item:hover{
+	background-color: var(--cinzam);
+}
+.container .finance .months .display{
+	vertical-align: middle;
+}
+.container .finance .months .text .title{
+	font-size: 20px;
+	font-family: 'Reem Kufi', sans-serif;
+	color: var(--preto);
+	line-height: 1.0;
+}
+.container .finance .months .text .saldo{
+	font-size: 17px;
+	font-family: 'Abel', sans-serif;
+	font-weight: normal;
+	color: var(--preto);
+}
+.container .finance .months a{
+	text-decoration: none;
+	color: var(--preto);
+	cursor: pointer;
+}
+.container .finance .months .items{
+	height: 270px;
+	overflow-x: scroll;
+}
+.container .information{
+	width: 76%;
+	margin-left: 23%;
+}
+.container .information .top-info{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.container .information .title{
+	padding: 2% 3%;
+	font-size: 40px;
+	font-family: 'Reem Kufi', sans-serif;
+	line-height: 1.1;
+	width: 30%;
+	margin: 0;
+}
+.container .information .title .highlight{
+	font-size: 50px;
+	display: block;
+	font-weight: bold;
+	font-family: 'Reem Kufi', sans-serif;
+	line-height: 1.1;
+}
+.container .information .display{
+	vertical-align: top;
+}
+.container .information .options{
+	padding: 2% 3%;
+	float: right;
+	width: 58%;
+	margin: 0;
+	text-align: right;
+}
+.container .information .options img{
+	width: 10%;
+	vertical-align: middle;
+	border-radius: 100%;
+	margin-left: 5%;
+	margin-bottom: 1.5%;
+}
+
+.container .information .options a{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+	color: var(--preto);
+	z-index: 3;
+	position: relative;
+}
+
+.container .information .options button{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+	color: var(--preto);
+	z-index: 3;
+	position: relative;
+}
+
+.container .information .options button:hover{
+	color: var(--principal);
+	transform: scale(1.15);
+}
+.container .information .options #search-close{
+	transform: translateX(-25px);
+	transition: all 1s;
+	z-index: 1;
+}
+.container .information .options input{
+	width: 7%;
+	padding: 2% 2.5%;
+	margin-top: -1%;
+	border-radius: 20px;
+	border: 1px solid var(--cinza);
+	outline: none;
+	transition: all 0.5s;
+	transform: translateX(40px);
+	vertical-align: middle;
+	z-index: 2;
+	position: relative;
+	font-family: 'Abel', sans-serif;
+	background-color: var(--branco);
+}
+.container .information .options input:hover{
+	border: 1px solid var(--principal);
+}
+
+
+/*------------------------------------------------------------------------------------------------------
+                                                LOGIN
+------------------------------------------------------------------------------------------------------*/
+
+
+.login{
+  background-color: var(--principal);
+}
+.login img{
+  height: 100px;
+  position: absolute;
+  left:50%;
+  top:17%;
+  transform: translate(-50%, -80%);
+}
+.login form{
+  background-color: var(--branco);
+  font-family: 'Reem Kufi', sans-serif;
+  max-width: 500px;
+  width: 70%;
+  padding: 20px;
+  position: absolute;
+  left:50%;
+  top:55%;
+  transform: translate(-50%, -50%);
+  border-radius:20px;
+}
+.login form h3{
+  text-align: center;
+  color: var(--principal);
+}
+.login form input[type="text"],
+.login form input[type="password"],
+.login form button{
+  width: 97%;
+  height: 45px;
+  border: 1px solid var(--principal);
+  padding-left: 10px;
+  margin:10px 0;
+  outline: none;
+  border-radius: 10px;
+}
+.login form button{
+  color: var(--branco);
+  cursor: pointer;
+  align-items: center;
+  background-color: var(--principal);
+  margin-bottom: 5%;
+  width: 100%;
+}
+.login p{
+  padding-top: 3%;
+  border-top: 1px solid var(--principal);
+  text-align: center;
+}
+
+.login spam{
+	padding-top: 3%;
+	margin-left: 30%;
+}
+
+.login a{
+  text-decoration: none;
+  color: var(--principal);
+}
+.login .message{
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	z-index: 3;
+	transition: all 1s;
+	display: none;
+}
+.login .message .box{
+	position: fixed;
+	width: 40%;
+	top: 42%;
+	left: 30%;
+	background-color: var(--branco);
+	font-size: 20px;
+	text-align: center;
+}
+.login .message .box .title{
+	padding: 1%;
+	font-size: 25px;
+	background-color: var(--cinzae);
+	color: white;
+}
+.login .message .box .title button{
+	background-color: transparent;
+	font-size: 25px;
+	color: var(--branco);
+	border: none;
+	float: right;
+	margin: 0% 1%;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.login .message .box .title button:hover{
+	transform: rotate(90deg) scale(1.2);
+}
+.login .message .box .text{
+	padding: 3%;
+}
+.login .message .success{
+	border: 2px solid var(--verde);
+}
+.login .message .success .title{
+	background-color: var(--verde);
+}
+.login .message .error{
+	border: 2px solid var(--vermelho);
+}
+.login .message .error .title{
+	background-color: var(--vermelho);
+}
+
+
+/*------------------------------------------------------------------------------------------------------
+                                                CADASTRO
+------------------------------------------------------------------------------------------------------*/
+
+
+.cadastro{
+  background-color: var(--principal);
+  padding-bottom: 51%;
+}
+.cadastro img{
+  height: 100px;
+  position: absolute;
+  left:50%;
+  top:17%;
+  transform: translate(-50%, -80%);
+}
+.cadastro form{
+  background-color: var(--branco);
+  font-family: 'Reem Kufi', sans-serif;
+  max-width: 500px;
+  width: 70%;
+  padding: 20px;
+  position: absolute;
+  left:50%;
+  top:65%;
+  transform: translate(-50%, -50%);
+  border-radius:20px;
+}
+.cadastro form h3{
+  text-align: center;
+  color: var(--principal);
+}
+.cadastro form input[type="text"],
+.cadastro form input[type="password"],
+.cadastro form button{
+  width: 97%;
+  height: 45px;
+  border: 1px solid var(--principal);
+  padding-left: 10px;
+  margin:10px 0;
+  outline: none;
+  border-radius: 10px;
+}
+.cadastro form button{
+  color: var(--branco);
+  cursor: pointer;
+  align-items: center;
+  background-color: var(--principal);
+  margin-bottom: 5%;
+  width: 100%;
+}
+.cadastro p{
+  padding-top: 3%;
+  border-top: 1px solid var(--principal);
+  text-align: center;
+}
+.cadastro a{
+  text-decoration: none;
+  color: var(--principal);
+}
+.cadastro .message{
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	z-index: 3;
+	transition: all 1s;
+	display: none;
+}
+.cadastro .message .box{
+	position: fixed;
+	width: 40%;
+	top: 42%;
+	left: 30%;
+	background-color: var(--branco);
+	font-size: 20px;
+	text-align: center;
+}
+.cadastro .message .box .title{
+	padding: 1%;
+	font-size: 25px;
+	background-color: var(--cinzae);
+	color: white;
+}
+.cadastro .message .box .title button{
+	background-color: transparent;
+	font-size: 25px;
+	color: var(--branco);
+	border: none;
+	float: right;
+	margin: 0% 1%;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.cadastro .message .box .title button:hover{
+	transform: rotate(90deg) scale(1.2);
+}
+.cadastro .message .box .text{
+	padding: 3%;
+}	
+.cadastro .message .success{
+	border: 2px solid var(--verde);
+}
+.cadastro .message .success .title{
+	background-color: var(--verde);
+}
+.cadastro .message .error{
+	border: 2px solid var(--vermelho);
+}
+.cadastro .message .error .title{
+	background-color: var(--vermelho);
+}
+
+
+/*------------------------------------------------------------------------------------------------------
+                                                INDEX
+------------------------------------------------------------------------------------------------------*/
+
+
+.index .container .information .transaction{
+	width: 100%;
+	margin: 1% 0%;
+	text-align: right;
+}
+.index .container .information .transaction button{
+	background-color: var(--principal);
+	margin-bottom: 2%;
+	font-size: 20px;
+	border-radius: 30px;
+	border: none;
+	width: 26%;
+	padding: 1%;
+	color: var(--branco);
+	font-family: 'Reem Kufi', sans-serif;
+	cursor: pointer;
+	transition: all 1s;
+}
+.index .container .information .transaction button:hover{
+	background-color: var(--cinzae);
+}
+.index .container .information table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--principal);
+  padding: 1%;
+  border-radius: 10px;
+  font-family: 'Abel', sans-serif;
+  font-size: 17px;
+  margin-bottom: 3%;
+}
+.index .container .information th{
+  padding: 1%;
+  text-align: center;
+  color: var(--branco);
+  font-size: 20px;
+}
+.index .container .information td{
+  padding: 1%;
+  text-align: center;
+  background-color: transparent;
+}
+.index .container .information table a{
+	padding: 5% 6% 3% 6%;
+	margin-right: 4%;
+	border: none;
+	border-radius: 5px;
+	color: var(--branco);
+	font-size: 17px;
+	cursor: pointer;
+}
+.index .container .information table a:first-child{
+	background-color: var(--verde);
+}
+.index .container .information table a:last-child{
+	background-color: var(--vermelho);
+}
+.index .container .information table tbody tr{
+	border-bottom: 1px solid var(--cinzam);
+	transition: all 0.5s;
+	background-color: var(--branco);
+	cursor: default;
+}
+.index .container .information table tbody tr:hover{
+	background-color: var(--cinza);
+}
+.index .container .information td .negative{
+	color: var(--vermelho);
+}
+
+.index .container .information td .positive{
+	color: var(--verde);
+}
+.index .message{
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	z-index: 3;
+	display: none;
+	transition: all 1s;
+}
+.index .message .box{
+	position: fixed;
+	background-color: var(--cinza);
+	border: 2px solid var(--principal);
+	border-radius: 10px;
+	width: 40%;
+	top: 15%;
+	left: 30%;
+}
+.index .message .box .title{
+	font-size: 30px;
+	font-family: 'Abel', sans-serif;
+	padding: 2%;
+	background-color: var(--principal);
+	color: var(--branco);
+	width: 96%;
+	border-radius: 5px 5px 0px 0px;
+}
+.index .message .box .title button{
+	background-color: transparent;
+	font-size: 25px;
+	color: var(--branco);
+	border: none;
+	float: right;
+	margin: 1%;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.index .message .box .title button:hover{
+	transform: rotate(90deg) scale(1.2);
+}
+
+.index .transaction-message .box form{
+	padding: 2%;
+}
+.index .transaction-message .box form .input{
+	display: block;
+	padding: 3% 3%;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	width: 93%;
+	background-color: var(--cinzam);
+	border: 1px solid var(--branco);
+	border-radius: 10px;
+}
+.index .transaction-message .box form button{
+	display: block;
+	padding: 3% 3%;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	width: 99%;
+	background-color: var(--principal);
+	border-radius: 10px;
+	border: none;
+	color: var(--branco);
+	transition: all 0.5s;
+	border: 3px solid var(--principal);
+	cursor:pointer;
+}
+.index .transaction-message .box form button:hover{
+	background-color: var(--cinzae);
+	border: 3px solid var(--principal);
+}
+.index .transaction-message .box form select{
+	display: block;
+	padding: 3% 3%;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	width: 99%;
+	background-color: var(--cinzam);
+	border: 1px solid var(--branco);
+	border-radius: 10px;
+	color: grey;
+	margin-bottom: 3%;
+	cursor: pointer;
+}
+.index .transaction-message .box form select option{
+	padding: 2% 0.5%;
+}
+.index .transaction-message .box form .switch {
+	margin-top: 3%;
+  position: relative;
+  width: 30%;
+  height: 50px;
+  text-align: center;
+  background: var(--verde);
+  transition: all 0.2s ease;
+  border-radius: 25px;
+  margin-left: 35%;
+}
+.index .transaction-message .box form .switch .faces{
+  position: absolute;
+  width: 35px;
+  height: 33px;
+  top: 18%;
+  left: 43%;
+  transition: all 0.2s ease;
+  font-size: 30px;
+  color: var(--branco);
+}
+.index .transaction-message .box form .switch .faces .frown{
+	display: none;
+}
+.index .transaction-message .box form input[type=radio] {
+  display: none;
+}
+.index .transaction-message .box form .switch label {
+  cursor: pointer;
+  color: rgba(0,0,0,0.2);
+  width: 60px;
+  line-height: 50px;
+  transition: all 0.2s ease;
+}
+.index .transaction-message .box form label[for=yes] {
+  position: absolute;
+  left: 0px;
+  height: 20px;
+  padding-left: 4%;
+}
+.index .transaction-message .box form label[for=no] {
+  position: absolute;
+  right: 0px;
+}
+.index .transaction-message .box form #no:checked ~ .switch {
+  background: var(--vermelho);
+}
+.index .transaction-message .box form #no:checked ~ .switch .faces {
+  
+}
+.index .transaction-message .box form #no:checked ~ .switch .faces:after {
+  
+}
+.index .transaction-message .box form #yes:checked ~ .switch label[for=yes] {
+  color: #fff;
+}
+.index .transaction-message .box form #no:checked ~ .switch label[for=no] {
+  color: #fff;
+}
+.index .message-mes .box{
+	width: 70%;
+	top: 7%;
+	left: 15%;
+}
+.index .message-mes .box .title{
+	padding-bottom: 1%;
+}
+.index .message-mes .box .title button{
+	margin: 0% 1%;
+}
+.index .message table {
+  width: 98%;
+  margin-top: 2%;
+  margin-left: 1%;
+  border-collapse: collapse;
+  background-color: var(--cinzae);
+  padding: 1%;
+  border-radius: 10px;
+  font-family: 'Abel', sans-serif;
+  font-size: 17px;
+  margin-bottom: 1%;
+}
+.index .message th{
+  padding: 1%;
+  text-align: center;
+  color: var(--branco);
+  font-size: 20px;
+}
+.index .message td{
+  padding: 1%;
+  text-align: center;
+  background-color: transparent;
+}
+.index .message table button{
+	padding: 7% 8% 5% 8%;
+	margin-right: 4%;
+	border: none;
+	border-radius: 5px;
+	color: var(--branco);
+	font-size: 17px;
+	cursor: pointer;
+}
+.index .message table button:first-child{
+	background-color: var(--verde);
+}
+.index .message table button:last-child{
+	background-color: var(--vermelho);
+}
+.index .message table tbody tr{
+	border-bottom: 1px solid var(--cinzam);
+	transition: all 0.5s;
+	background-color: var(--branco);
+	cursor: default;
+}
+.index .message table tbody tr:hover{
+	background-color: var(--cinza);
+}
+.index .message td .negative{
+	color: var(--vermelho);
+}
+
+.index .message td .positive{
+	color: var(--verde);
+}
+
+
+/*------------------------------------------------------------------------------------------------------
+                                                CONTATO
+------------------------------------------------------------------------------------------------------*/
+
+.contato .container .information{
+	margin-left: 10%;
+}
+
+.contato .container .information .display{
+  vertical-align: top;
+}
+.contato .container .information .form{
+  width: 35%;
+}
+.contato .container .information form{
+  margin: 0px;
+  padding: 0px;
+  margin-left: 3%;
+}
+.contato .container .information form input,
+.contato .container .information form textarea,
+.contato .container .information form button{
+  padding: 2%;
+  width: 96%;
+  border: 1px solid var(--principal);
+  border-radius: 20px;
+  display: block;
+  margin-bottom: 3%;
+  resize: none;
+  outline: none;
+  font-family: 'Abel', sans-serif;
+  font-size: 15px;
+}
+.contato .container .information form button{
+  color: var(--branco);
+  cursor: pointer;
+  align-items: center;
+  background-color: var(--principal);
+  width: 100%;
+}
+.contato .container .info{
+  margin: 0px;
+  padding: 0px;
+  width: 59%;
+  margin-left: 5%;
+  margin-top: -0.5%;
+}
+.contato .container .info .title{
+  font-size: 30px;
+  font-family: 'Reem Kufi', sans-serif;
+  line-height: 1.1;
+  padding: 0;
+  margin-bottom: 1%;
+  width: 100%;
+}
+.contato .container .info .title .cursive{
+  padding-left: 1%;
+  font-size: 35px;
+  font-weight: bold;
+  color: var(--principal);
+  font-family: 'Parisienne', cursive;
+  line-height: 1.1;
+}
+.contato .container .info .more-infos{
+  width: 90%;
+  font-weight: bold;
+  font-size: 21px;
+  font-family: 'Abel', sans-serif;
+  line-height: 1.3;
+  margin-left: 0.5%;
+}
+.contato .container .info .more-infos .highlight{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Abel', sans-serif;
+  line-height: 1.1;
+}
+.contato .container .info .map{
+	width: 100%;
+	border: none;
+	padding-top : 5%;
+}
+.contato .container .info .map iframe{
+	width: 100%;
+	border: none;
+}
+
+
+/*------------------------------------------------------------------------------------------------------
+                                                SOBRE
+------------------------------------------------------------------------------------------------------*/
+
+.sobre .container .information{
+	margin-left: 10%;
+}
+
+.sobre .container .criadores{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+.sobre .container .criadores .criador{
+  padding-top: 30px;  
+  padding-bottom: 30px;    
+  font-size: 25px;
+  font-family: 'Abel', sans-serif;
+}
+.sobre .container .criadores .criador:first-child{
+	border-bottom: 1px solid var(--principal);
+}
+.sobre .container .criadores .criador .display{
+	vertical-align: middle;
+}
+.sobre .container .criadores .criador img{
+  margin-left: 7%;
+  width: 27%;
+}
+.sobre .container .criadores .criador .info-criadores{
+  padding-left: 2%;
+  line-height: 1.3;
+}
+
+.editar-transacao .transaction-message .box form{
+	padding: 2%;
+}
+.editar-transacao .transaction-message .box form .input{
+	display: block;
+	padding: 3% 3%;
+	margin-left: 25%;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	width: 46%;
+	background-color: var(--cinzam);
+	border: 1px solid var(--branco);
+	border-radius: 10px;
+}
+.editar-transacao .transaction-message .box form button{
+	display: block;
+	padding: 3% 3%;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	margin-left: 25%;
+	width: 46%;
+	background-color: var(--principal);
+	border-radius: 10px;
+	border: none;
+	color: var(--branco);
+	transition: all 0.5s;
+	border: 3px solid var(--principal);
+	cursor:pointer;
+}
+.editar-transacao .transaction-message .box form button:hover{
+	background-color: var(--cinzae);
+	border: 3px solid var(--principal);
+}
+.editar-transacao .transaction-message .box form select{
+	display: block;
+	padding: 3% 3%;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	margin-left: 25%;
+	width: 46%;
+	background-color: var(--cinzam);
+	border: 1px solid var(--branco);
+	border-radius: 10px;
+	color: grey;
+	margin-bottom: 3%;
+	cursor: pointer;
+}
+.editar-transacao .transaction-message .box form select option{
+	padding: 2% 0.5%;
+}
+.editar-transacao .transaction-message .box form .switch {
+	margin-top: 3%;
+  position: relative;
+  width: 30%;
+  height: 50px;
+  text-align: center;
+  background: var(--verde);
+  transition: all 0.2s ease;
+  border-radius: 25px;
+  margin-left: 35%;
+}
+.editar-transacao .transaction-message .box form .switch .faces{
+  position: absolute;
+  width: 35px;
+  height: 33px;
+  top: 18%;
+  left: 43%;
+  transition: all 0.2s ease;
+  font-size: 30px;
+  color: var(--branco);
+}
+.editar-transacao .transaction-message .box form .switch .faces .frown{
+	display: none;
+}
+.editar-transacao .transaction-message .box form input[type=radio] {
+  display: none;
+}
+.editar-transacao .transaction-message .box form .switch label {
+  cursor: pointer;
+  color: rgba(0,0,0,0.2);
+  width: 60px;
+  line-height: 50px;
+  transition: all 0.2s ease;
+}
+.editar-transacao .transaction-message .box form label[for=yes] {
+  position: absolute;
+  left: 0px;
+  height: 20px;
+  padding-left: 4%;
+}
+.editar-transacao .transaction-message .box form label[for=no] {
+  position: absolute;
+  right: 0px;
+}
+.editar-transacao .transaction-message .box form #no:checked ~ .switch {
+  background: var(--vermelho);
+}
+.editar-transacao .transaction-message .box form #no:checked ~ .switch .faces {
+  
+}
+.editar-transacao .transaction-message .box form #no:checked ~ .switch .faces:after {
+  
+}
+.editar-transacao .transaction-message .box form #yes:checked ~ .switch label[for=yes] {
+  color: #fff;
+}
+.editar-transacao .transaction-message .box form #no:checked ~ .switch label[for=no] {
+  color: #fff;
+}
+
+
+.editar-usuario .usuario-message .box form{
+	padding: 2%;
+}
+.editar-usuario .usuario-message .box form .input{
+	display: block;
+	padding: 3% 3%;
+	margin-left: 25%;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	width: 46%;
+	background-color: var(--cinzam);
+	border: 1px solid var(--branco);
+	border-radius: 10px;
+}
+.editar-usuario .usuario-message .box form button{
+	display: block;
+	padding: 3% 3%;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	margin-left: 28%;
+	width: 46%;
+	background-color: var(--principal);
+	border-radius: 10px;
+	border: none;
+	color: var(--branco);
+	transition: all 0.5s;
+	border: 3px solid var(--principal);
+	cursor:pointer;
+}
+.editar-usuario .usuario-message .box form button:hover{
+	background-color: var(--cinzae);
+	border: 3px solid var(--principal);
+}

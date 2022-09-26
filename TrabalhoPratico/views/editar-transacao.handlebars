@@ -1,0 +1,117 @@
+<div class="information display">
+    <div class="top-info">
+        <div class="title display">Controle <span class="highlight">Financeiro</span></div>
+        <div class="options display">
+            <input type="search" name="search" id="search-input" placeholder="Pesquise aqui">
+            <button id="search"><i class="fa-solid fa-search"></i></button>
+            <button id="search-close"><i class="fa-solid fa-times"></i></button>
+            <img src="https://cdn-icons-png.flaticon.com/512/5509/5509366.png" draggable="false">
+            <a href="/editar-usuario"><i class="fa-solid fa-angle-down"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="editar-transacao">
+    <div class="transaction-message">
+        <div class="box">
+            <form action="/editar-transacao" method="POST">
+                <input type="hidden" name="codigo" class="input" value = {{codigo}}>
+                <input type="text" name="titulo" class="input" value = {{titulo}}>
+                <input type="number" step="0.01" name="valor" class="input" value = {{valor}}>
+
+                <div class="toggle-radio">
+                    {{#if tipo}}
+                        <input type="radio" name="rdo" id="yes" value="1" checked>
+                        <input type="radio" name="rdo" id="no" value="0">
+                    {{else}}
+                        <input type="radio" name="rdo" id="yes" value="1">
+                        <input type="radio" name="rdo" id="no" value= "0" checked>
+                    {{/if}}
+                    
+                    <div class="switch">
+                        <label for="yes">Entrada</label>
+                        <label for="no">Saída</label>
+                        <span class="faces">
+                            <span class="smile" id="smile"><i class="fas fa-smile"></i></span>
+                            <span class="frown" id="frown"><i class="fa-solid fa-face-frown"></i></span>
+                        </span>
+                    </div>
+                </div>
+
+                <select name="categoria" id="cars">
+                    <option value="Casa">Casa</option>
+                    <option value="Compras">Compras</option>
+                    <option value="Estudos">Estudos</option>
+                    <option value="Viagem">Viagem</option>
+                    <option value="Supermercado">Supermercado</option>
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var i;
+
+    var search = document.getElementById("search");
+    var search_close = document.getElementById("search-close");
+    var search_input = document.getElementById("search-input");
+
+    search.addEventListener("click", searchToggle);
+    search_close.addEventListener("click", searchToggleClose);
+
+    function searchToggle() {
+        search_input.style.width = "45%";
+        search_close.style.display = "inline-block";
+        search_close.style.transform = "translateX(-25px)";
+        setTimeout(function display() {
+            search_close.style.transform = "translateX(0px) rotate(90deg)";
+        }, 100);
+    }
+
+    function searchToggleClose() {
+        search_input.style.width = "7%";
+        search_close.style.transform = "rotate(-90deg) translateY(-25px)";
+        setTimeout(function display() {
+            search_input.style.transform = "translateX(25deg)";
+        }, 1000);
+    }
+
+    var yes = document.getElementById("yes");
+    var no = document.getElementById("no");
+    var smile = document.getElementById("smile");
+    var frown = document.getElementById("frown");
+
+    yes.addEventListener("click", changeSmile);
+    no.addEventListener("click", changeFrown);
+
+    function changeSmile() {
+        smile.style.display = "inline-block";
+        frown.style.display = "none";
+    }
+    function changeFrown() {
+        smile.style.display = "none";
+        frown.style.display = "inline-block";
+    }
+
+    var mes_close = document.getElementsByClassName("mes-close");
+    for (i = 0; i < mes_close.length; i++) {
+        mes_close[i].addEventListener("click", closeMes);
+    }
+
+    function openMes(n) {
+        var mes = document.getElementById("mes-" + n + "-message");
+        mes.style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
+    function closeMes() {
+        var mes = document.getElementsByClassName("message-mes");
+
+        for (i = 0; i < mes.length; i++) {
+            mes[i].style.display = "none";
+        }
+
+        document.body.style.overflow = "auto";
+    }
+</script>

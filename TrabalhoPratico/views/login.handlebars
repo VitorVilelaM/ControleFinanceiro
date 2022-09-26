@@ -1,0 +1,37 @@
+<div class="login">
+
+    <div class="container">
+        <img src="/assets/img/logo.jpg">
+        <form method="POST">
+            <h3>Entrar no Finance.me</h3>
+            <input type="text" name="email" placeholder="Seu usuario (adm)" />
+            <input type="password" name="senha" placeholder="Sua senha (adm123)" />
+            <button class="button" type="submit">Entrar</button>
+            {{#if dadosValidos}}
+            {{else}}
+            <div style="color: red">
+                <spam>{{mensagem}}</spam>
+            </div>
+            {{/if}}
+            <p>Ainda não possui login? <a href="/cadastro">Cadastre-se</a></p>
+        </form>
+    </div>
+
+    <div class="message" id="message-success">
+        <div class="box success">
+            <div class="title">Parabéns!<button id="success-close"><i class="fas fa-times"></i></button></div>
+            <div class="text">Login realizado com sucesso!<br>Você será redirecionado para a página inicial.</div>
+        </div>
+    </div>
+    <div class="message" id="message-error">
+        <div class="box error">
+            <div class="title">Erro!<button id="error-close"><i class="fas fa-times"></i></button></div>
+            <div class="text">Login não realizado!<br>Verifique as informações enviadas e tente novamente.</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var disp = document.getElementsByClassName('finance').style.display;
+    disp = "none;"
+</script>

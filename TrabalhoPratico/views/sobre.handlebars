@@ -1,0 +1,66 @@
+<div class="sobre">
+    <div class="container">
+        
+        <div class="information display">
+            <div class="top-info">
+                <div class="title display">Controle <span class="highlight">Financeiro</span></div>
+                <div class="options display">
+                    <input type="search" name="search" id="search-input" placeholder="Pesquise aqui">
+                    <button id="search"><i class="fa-solid fa-search"></i></button>
+                    <button id="search-close"><i class="fa-solid fa-times"></i></button>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5509/5509366.png" draggable="false">
+                    <a href="/editar-usuario"><i class="fa-solid fa-angle-down"></i></a>
+                </div>
+            </div>
+            <div class="criadores">
+                <div class="criador">
+                    <img src="/assets/img/aline.jpg" class="display">
+                    <div class="info-criadores display">
+                        <p class="text">Nome: Aline Stephanie Santos Gonçalves</p>
+                        <p class="text">Telefone: (35) 98712-1329</p>
+                        <p class="text">Email: alinesmaretti@gmail.com</p>
+                        <p class="text">Curso: 4º Periodo - Engenharia de Computação</p>
+                        <p class="text">RA: 202011020007</p>
+                    </div>
+                </div>
+
+                <div class="criador">
+                    <img src="/assets/img/vitor.jpg" class="display">
+                    <div class="info-criadores display">
+                        <p class="text">Nome: Vitor Vilela Moraes</p>
+                        <p class="text">Telefone: (38) 98858-1792</p>
+                        <p class="text">Email: vilelavitor305@gmail.com</p>
+                        <p class="text">Curso: 4º Periodo - Engenharia de Computação</p>
+                        <p class="text">RA: 202011020022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var search = document.getElementById("search");
+    var search_close = document.getElementById("search-close");
+    var search_input = document.getElementById("search-input");
+
+    search.addEventListener("click", searchToggle);
+    search_close.addEventListener("click", searchToggleClose);
+
+    function searchToggle() {
+        search_input.style.width = "45%";
+        search_close.style.display = "inline-block";
+        search_close.style.transform = "translateX(-25px)";
+        setTimeout(function display() {
+            search_close.style.transform = "translateX(0px) rotate(90deg)";
+        }, 100);
+    }
+    function searchToggleClose() {
+        search_input.style.width = "7%";
+        search_close.style.transform = "rotate(-90deg) translateY(-25px)";
+        setTimeout(function display() {
+            search_input.style.transform = "translateX(25deg)";
+        }, 1000);
+    }
+
+</script>

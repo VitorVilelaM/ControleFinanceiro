@@ -1,0 +1,260 @@
+<div class="finance display">
+    <div class="items">
+        {{#each listaTransacoesInfo}}
+        <div class="item total">
+            <div class="value">
+                {{total}}
+            </div>
+            <div class="title">
+                <i class="fas fa-dollar-sign"></i> Total
+            </div>
+        </div>
+        <div class="item ganho">
+            <div class="value">
+                {{entradaTotal}}
+            </div>
+            <div class="title">
+                Entradas <i class="fa-solid fa-arrow-up"></i>
+            </div>
+        </div>
+        <div class="item gasto">
+            <div class="value">
+                {{saidaTotal}}
+            </div>
+            <div class="title">
+                Saídas <i class="fa-solid fa-arrow-down"></i>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="months">
+        <div class="titulo">Gastos Mensais</div>
+        <div class="items">
+            <a onclick="openMes(7);">
+                <div class="item">
+                    <div class="month display">
+                        <i class="fa-solid fa-0"></i><i class="fa-solid fa-7"></i>
+                    </div>
+                    <div class="text display">
+                        <div class="title">Julho</div>
+                        <div class="saldo">R${{mes1}}</div>
+                    </div>
+                </div>
+            </a>
+            <a onclick="openMes(6);">
+                <div class="item">
+                    <div class="month display">
+                        <i class="fa-solid fa-0"></i><i class="fa-solid fa-6"></i>
+                    </div>
+                    <div class="text display">
+                        <div class="title">Junho</div>
+                        <div class="saldo">R$00.00</div>
+                    </div>
+                </div>
+            </a>
+            <a onclick="openMes(5);">
+                <div class="item">
+                    <div class="month display">
+                        <i class="fa-solid fa-0"></i><i class="fa-solid fa-5"></i>
+                    </div>
+                    <div class="text display">
+                        <div class="title">Maio</div>
+                        <div class="saldo">R$00.00</div>
+                    </div>
+                </div>
+            </a>
+            <a onclick="openMes(4);">
+                <div class="item">
+                    <div class="month display">
+                        <i class="fa-solid fa-0"></i><i class="fa-solid fa-4"></i>
+                    </div>
+                    <div class="text display">
+                        <div class="title">Abril</div>
+                        <div class="saldo">R$00.00</div>
+                    </div>
+                </div>
+            </a>
+            <a onclick="openMes(10);">
+                <div class="item">
+                    <div class="month display">
+                        <i class="fa-solid fa-0"></i><i class="fa-solid fa-3"></i>
+                    </div>
+                    <div class="text display">
+                        <div class="title">Março</div>
+                        <div class="saldo">R$00.00</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="information display">
+    <div class="top-info">
+        <div class="title display">Controle <span class="highlight">Financeiro</span></div>
+        <div class="options display">
+            <input type="search" name="search" id="search-input" placeholder="Pesquise aqui">
+            <button id="search"><i class="fa-solid fa-search"></i></button>
+            <button id="search-close"><i class="fa-solid fa-times"></i></button>
+            <img src="https://cdn-icons-png.flaticon.com/512/5509/5509366.png" id="minhaImagem">
+            <a href="/editar-usuario"><i class="fa-solid fa-angle-down"></i></a>
+        </div>
+    </div>
+    <div class="transaction">
+        <button id="transaction">Cadastrar transação</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Valor</th>
+                <th>Categoria</th>
+                <th>Data</th>
+                <th>Horario</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each listaTransacoes}}
+            <tr>
+                <td>{{titulo}}</td>
+                {{#if tipo}}
+                <td><span class="positive">{{valor}}</span></td>
+                {{else}}
+                <td><span class="negative">{{valor}}</span></td>
+                {{/if}}
+                <td>{{categoria}}</td>
+                <td>{{data}}</td>
+                <td>{{horario}}</td>
+                <td><a href="/editar-transacao?codigo={{ codigo }}"><i class="fas fa-pencil"></i></a>
+                    <a href="/excluir-transacao?codigo={{ codigo }}"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+        </tbody>
+        {{/each}}
+    </table>
+</div>
+</div>
+
+<div class="message transaction-message" id="transaction-message">
+    <div class="box">
+        <div class="title display">Cadastrar Transação<button id="transaction-close"><i
+                    class="fas fa-times"></i></button></div>
+        <form action="/" method="POST">
+            <input type="text" name="titulo" class="input" placeholder="Título">
+            <input type="number" step="0.01" name="valor" class="input" placeholder="Valor: 00.00">
+
+            <div class="toggle-radio">
+                <input type="radio" name="rdo" id="yes" value="1" checked>
+                <input type="radio" name="rdo" id="no" value="0">
+                <div class="switch">
+                    <label for="yes">Entrada</label>
+                    <label for="no">Saída</label>
+                    <span class="faces">
+                        <span class="smile" id="smile"><i class="fas fa-smile"></i></span>
+                        <span class="frown" id="frown"><i class="fa-solid fa-face-frown"></i></span>
+                    </span>
+                </div>
+            </div>
+
+            <select name="categoria" id="cars">
+                <option value="Casa">Casa</option>
+                <option value="Compras">Compras</option>
+                <option value="Estudos">Estudos</option>
+                <option value="Viagem">Viagem</option>
+                <option value="Supermercado">Supermercado</option>
+            </select>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+{{#if dadosValidos}}
+<script type="text/javascript">
+    var loginSignup = document.getElementById("login-signup");
+    loginSignup.style.display = "none";
+</script>
+{{/if}}
+
+<script type="text/javascript">
+    var i;
+
+
+    var search = document.getElementById("search");
+    var search_close = document.getElementById("search-close");
+    var search_input = document.getElementById("search-input");
+
+    search.addEventListener("click", searchToggle);
+    search_close.addEventListener("click", searchToggleClose);
+
+    function searchToggle() {
+        search_input.style.width = "45%";
+        search_close.style.display = "inline-block";
+        search_close.style.transform = "translateX(-25px)";
+        setTimeout(function display() {
+            search_close.style.transform = "translateX(0px) rotate(90deg)";
+        }, 100);
+    }
+    function searchToggleClose() {
+        search_input.style.width = "7%";
+        search_close.style.transform = "rotate(-90deg) translateY(-25px)";
+        setTimeout(function display() {
+            search_input.style.transform = "translateX(25deg)";
+        }, 1000);
+    }
+
+    var transaction_open = document.getElementById("transaction");
+    var transaction_close = document.getElementById("transaction-close");
+    var transaction_message = document.getElementById("transaction-message");
+    var container = document.getElementById("container");
+
+    transaction_open.addEventListener("click", transactionToggle);
+    transaction_close.addEventListener("click", transactionToggleClose);
+
+    function transactionToggle() {
+        transaction_message.style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
+    function transactionToggleClose() {
+        transaction_message.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+    var yes = document.getElementById("yes");
+    var no = document.getElementById("no");
+    var smile = document.getElementById("smile");
+    var frown = document.getElementById("frown");
+
+    yes.addEventListener("click", changeSmile);
+    no.addEventListener("click", changeFrown);
+
+    function changeSmile() {
+        smile.style.display = "inline-block";
+        frown.style.display = "none";
+    }
+    function changeFrown() {
+        smile.style.display = "none";
+        frown.style.display = "inline-block";
+    }
+
+    var mes_close = document.getElementsByClassName("mes-close");
+    for (i = 0; i < mes_close.length; i++) {
+        mes_close[i].addEventListener("click", closeMes);
+    }
+
+    function openMes(n) {
+        var mes = document.getElementById("mes-" + n + "-message");
+        mes.style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
+    function closeMes() {
+        var mes = document.getElementsByClassName("message-mes");
+
+        for (i = 0; i < mes.length; i++) {
+            mes[i].style.display = "none";
+        }
+
+        document.body.style.overflow = "auto";
+    }
+</script>
